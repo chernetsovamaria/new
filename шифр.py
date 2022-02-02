@@ -14,3 +14,4 @@ def decode(message):
 decode('svool')
 decode('try to decide this')
 decode('')
+print('Hello world!')
