@@ -1,9 +1,17 @@
 def find_unique(num_list):
-    num_dict = {n: n % 2 for n in num_list}
-    print(num_dict)
-    n = {v: k for k, v in num_dict.items()}
-    return n
+    rem = 0
+    num_dict = {d: d % 2 for d in num_list}
+    for i in num_dict.values():
+        rem += i
+    if rem == 1:
+        for k, v in num_dict.items():
+            if v == 1:
+                return k
+    elif rem > 1:
+        for k, v in num_dict.items():
+            if v == 0:
+                return k
 
 
-print(find_unique([3, 11, 77, 101, 6, 445, 13]))
-print(find_unique([12, 34, 11, 72, 10, 6, 44, 18]))
+print(find_unique([4, 6, 21, 8, 10]))
+print(find_unique([3, 7, 24, 3, 11]))
